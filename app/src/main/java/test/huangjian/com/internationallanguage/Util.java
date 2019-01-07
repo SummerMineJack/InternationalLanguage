@@ -3,6 +3,7 @@ package test.huangjian.com.internationallanguage;
 import android.util.Log;
 
 import com.blankj.utilcode.util.DeviceUtils;
+import com.blankj.utilcode.util.EncryptUtils;
 
 import org.json.JSONObject;
 
@@ -35,7 +36,7 @@ public class Util {
     private static String sign(PublicParameterBean publicParameterBean) {
         com.alibaba.fastjson.JSONObject jsonObject = (com.alibaba.fastjson.JSONObject) com
                 .alibaba.fastjson.JSONObject.toJSON(publicParameterBean);
-        Log.e("~~~~~~~~~~~~", jsonObject.toJSONString());
+        Log.e("~~~~~~~~~~~~", EncryptUtils.encryptSHA256ToString(jsonObject.toString()));
         return "";
     }
 
